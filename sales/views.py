@@ -10,7 +10,7 @@ from datetime import timedelta
 from rest_framework.response import Response
 
 
-# функция главной страницы
+# View главной страницы
 def main_page(request):
     return render(request,'html/index.html')
 
@@ -79,18 +79,12 @@ class AllMotobikeAPIView(ListAPIView):
     filterset_fields=("motobike__brand__name","date","year","engine_volumes",
                 "mileage","state","price","engine","fuel","class_moto")
     
-    
-
-
-
-
 
 
 class AllMotobikeBrandAPIView(ListAPIView):
     serializer_class=MotobikeBramdSerializers
 
     def get_queryset(self):
-
         return MotorbikeBrand.objects.all()
 
 

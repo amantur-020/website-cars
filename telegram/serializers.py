@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import TelegramUsers,Subscriptions
 
-
+# Serializer telegram user
 class TelegramUsersSerializers(serializers.ModelSerializer):
     class Meta:
         model=TelegramUsers
@@ -9,7 +9,7 @@ class TelegramUsersSerializers(serializers.ModelSerializer):
 
 
 
-
+# Serializer subscriptions
 class SubscriptionsSerializers(serializers.ModelSerializer):
     user_id=serializers.IntegerField(source="user.user_id")
     class Meta:

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework_simplejwt',
     'rest_framework',
     'drf_yasg2',
     'django_celery_beat',
@@ -52,7 +53,18 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'sales.apps.SalesConfig',
     'telegram.apps.TelegramConfig',
+    'accounts.apps.AccountsConfig',
 ]
+
+
+
+REST_FRAMEWORK = {    
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

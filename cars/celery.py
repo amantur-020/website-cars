@@ -11,6 +11,6 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'test': {
         'task': 'telegram.tasks.telegram_mailing',
-        'schedule': 10
+        'schedule': crontab(0, 0, day_of_month='2')
     }
 }
